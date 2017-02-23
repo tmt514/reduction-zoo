@@ -35,3 +35,10 @@ exclude:
 
 sass:
   sass_dir: _sass
+collections:
+  reductions:
+    output: true
+    permlink: /reductions/:path/:title.:output_ext
+  problems:
+    output: true
+    permlink: /problems/:path/:title.:output_ext

@@ -1,8 +1,8 @@
 
-.problem-name {
+.problem-name, .pname {
   font-variant: small-caps;
 }
-.problem-input, .problem-question {
+.problem-input, .problem-question, .problem-reductions {
   .subt {
     font-family: "Droid Serif", sans-serif;
     text-align: right;
@@ -10,6 +10,9 @@
   .desc {
     font-family: "Droid Serif", sans-serif;
   }
+}
+.problem-reduction .desc {
+  font-size: 80%;
 }
 .problem-hidden {
   display: none;
