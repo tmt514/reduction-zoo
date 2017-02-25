@@ -17,3 +17,16 @@
 .problem-hidden {
   display: none;
 }
+
+
+
+.site-page-link:not(:last-child) {
+  margin-right: 20px;
+}
+.site-page-link {
+  color: #111;
+  line-height: 1.5;
+}
+.container {
+  max-width: calc(800px - (30px * 2)) !important;
+}

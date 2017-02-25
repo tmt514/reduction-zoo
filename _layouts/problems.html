@@ -2,7 +2,12 @@
 layout: plain
 ---
 
-<h2 class="pname">{{page.name}}</h2>
+<h2 style="padding-top:60px" class="pname">{{page.name}}</h2>
+<style>
+  h3 {
+    padding-top: 15px;
+  }
+</style>
 
 <h3>Input</h3>
 
@@ -12,5 +17,36 @@ layout: plain
 
 {{page.question}}
 
-
 {{ content }}
+
+{% if page.reference %}
+<h3>Reference</h3>
+
+{{page.reference}}
+
+{% endif %}
+
+{% assign reductions = site.reductions | where: "from", page.name %}
+{% assign v = (reductions | size) %}
+{% if v > 0 %}
+<h3>Reductions To:</h3>
+<ul>
+{% for reduction in reductions %}
+ <li>
+   <a class="pname" href="{{ reduction.url }}">{{reduction.from}} $\leq$ {{reduction.to}}</a>
+ </li>
+{% endfor %}
+</ul>
+{% endif %}
+{% assign reductions = site.reductions | where: "to", page.name %}
+{% assign v = (reductions | size) %}
+{% if v > 0 %}
+<h3>Reductions From:</h3>
+<ul>
+{% for reduction in reductions %}
+<li>
+  <a class="pname" href="{{ reduction.url }}">{{reduction.from}} $\leq$ {{reduction.to}}</a>
+</li>
+{% endfor %}
+</ul>
+{% endif %}
